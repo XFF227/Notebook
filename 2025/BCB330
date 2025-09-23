@@ -1,0 +1,893 @@
+Xiao Feng's Scratch
+
+9.8
+
+using AF3 predict 3a68, get five prediction. the shown one is model0
+image-20240908235350098
+This image has an empty alt attribute; its file name is image-20240908235350098-1.png
+prediction
+RCSB
+0
+0.278
+1
+0.281
+2
+0.261
+3
+0.259
+4
+0.264
+avg
+0.2686
+using AF3 get 3a9q get 5 predictions. the shown is model0
+
+This image has an empty alt attribute; its file name is image-20240909000055260-1.png
+prediction
+RCSB
+0
+0.268
+1
+0.244
+2
+0.253
+3
+0.253
+4
+0.274
+avg
+0.2584
+9.10
+
+﻿
+wild type
+(3A68)
+mutant
+(3A9Q)
+AF2 3A68
+AF2 3A9Q
+AF3 3A68
+AF3 3A9Q
+phyre2 3A68
+phyre2 3A9Q
+wild type
+(3A68)	
+0
+﻿
+﻿
+﻿
+﻿
+﻿
+﻿
+﻿
+mutant
+(3A9Q)	
+0.103
+0
+﻿
+﻿
+﻿
+﻿
+﻿
+﻿
+AF2 3A68	
+0.441
+0.625
+0
+﻿
+﻿
+﻿
+﻿
+﻿
+AF2 3A9Q	
+0.444
+0.449
+0.051
+0
+﻿
+﻿
+﻿
+﻿
+AF3 3A68	
+0.278
+0.261
+0.364
+0.354
+0
+﻿
+﻿
+﻿
+AF3 3A9Q	
+0.236
+0.268
+0.352
+0.349
+0.087
+0
+﻿
+﻿
+phyre2 3A68	
+0.168
+0.154
+0.590
+0.617
+0.299
+0.283
+0
+﻿
+phyre2 3A9Q	
+0.168
+0.154
+0.590
+0.617
+0.299
+0.283
+0.00
+0
+phyre2 has lowest RCSB with real protein
+
+alphafold 3 has highest difference in RCSB between mutation and wild type
+
+9.11
+
+add hotpots:
+
+viewer.addArrow(); viewer.addSphere()
+
+9.12
+
+meet todo:
+
+proposal outline; prediction change analyze in AF3 phyre2; highlight hotpots using 3Dmol; code efficiency
+
+﻿
+
+9.16
+
+difference between wild type(3a68) and mutant(3a9q). shown in green color.
+This image has an empty alt attribute; its file name is 9e8f2096f00874bb80dc61be9bbce4a.png
+in structure, red is 3a86 and green is 3a9q. we can see mutant has two parts difference
+wild type is a loop
+mutant is helix
+This image has an empty alt attribute; its file name is 7dd0ed3857c850c069eeba3bae0c504.png
+difference in phyre2 predicted wild type(yellow) and real wild type(red).
+phyre2 wild is helix
+read wild is loop
+This image has an empty alt attribute; its file name is image-1.png
+difference in af3 predicted wild type(pink) and real wild type(red).
+af3 wild is helix
+read wild is loop
+af3 has lots of short chain at both N and C terminal
+This image has an empty alt attribute; its file name is image-2-1024x493.png
+difference between af3 predict wild(pink) and af3 predict mutant(green).
+the only difference are N/C terminal chain.
+This image has an empty alt attribute; its file name is image-4.png
+sequence in pymol
+This image has an empty alt attribute; its file name is image-5.png
+This image has an empty alt attribute; its file name is image-7.png
+﻿
+
+AF2 prediction
+many parts non-accurate
+This image has an empty alt attribute; its file name is image-8-1024x429.png
+Conclusion: There are some nonsense sequences at both N/C terminals which not in the real structure. Phyre2 can cut some of them and AF3 didn't do anything. Both Phyre2 and AF3 can't recognize the difference between real wild type and mutant. Phyre2 do better on the cut nonsense terminal
+9.23
+
+read article respect to canola gwas analyze, trying to find data sourse.
+
+https://bnapus-zju.com/bnasnpdb/#tab-7785-6. Only csv format
+
+https://trace.ncbi.nlm.nih.gov/Traces/?view=study&acc=SRP155312. fastq format
+
+9.24
+
+same job
+
+BnIR, Brassica napus multi-omics database (information resource) (hzau.edu.cn)---vcf files
+
+This image has an empty alt attribute; its file name is image-9-1024x210.png
+﻿
+
+9.30
+
+finding data source of BNIR ZS11
+
+http://cbi.hzau.edu.cn/cgi-bin/rape/download_ext
+
+https://pubmed.ncbi.nlm.nih.gov/31932676
+
+Learning how to use SNPeff to retrieve nsSNP
+
+10.1
+
+writing research proposal
+
+writing email to data resources to retrieve data
+
+10.3
+
+meeting: proposal; read paper to find why they need 8 genomes; gantt chart
+
+10.4
+
+reading the paper of database
+
+10.7
+
+Writing draft proposal. complete introduction: vcf files and hotspot regions.
+
+10.8
+
+Writing proposal, complete AF2 and SNPeff description.
+
+10.10
+
+Reflect on proposal. need to revised: reference list; visualization of hotspot region; accession number of ZS11
+
+10.12
+
+read: https://www.cell.com/molecular-plant/fulltext/S1674-2052(23)00071-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS1674205223000710%3Fshowall%3Dtrue
+
+and see vcf file.
+
+AN of ZS11.vcf is 5426, of Darmor is 4622
+
+10.14
+
+reference paper of ZS11
+
+v0(Song): https://pubmed.ncbi.nlm.nih.gov/31932676/:
+High-quality genome assembly and pan-genomic analysis of eight B. napus varieties
+
+original data in NCBI SRA Database https://www.ncbi.nlm.nih.gov/bioproject/PRJNA546246
+
+annotated files: http://cbi.hzau.edu.cn/bnapus
+
+v10(Chen): https://pubmed.ncbi.nlm.nih.gov/33073445/:
+PacBio Sequel and Hi-C technology, 18,759,245 snp were identified by resequencing 991 B. napus samples
+
+original data in NCBI SRA Database https://www.ncbi.nlm.nih.gov/bioproject/PRJNA640262(same as previous)
+
+Genome assembly files are also available at the National Genomics Data Center: GWH number GWHANRE000000000000
+
+v2(Sun): https://pubmed.ncbi.nlm.nih.gov/28849613/:
+The genome of ZS11 was sequenced and assembled
+
+original data in NCBI SRA Database https://www.ncbi.nlm.nih.gov/bioproject/PRJNA394926
+
+10.16
+
+2311 accesions: (Wu et al., 2019), (Tang et al., 2021), (Song et al., 2020), (Lu et al., 2019)
+
+ZS11 genome: https://pubmed.ncbi.nlm.nih.gov/28849613/
+
+variation files: BnVIR---https://yanglab.hzau.edu.cn/BnVIR
+
+Protein files: BnPIR---http://cbi.hzau.edu.cn/bnapus/
+
+10.21
+
+Get understand SNPer work
+
+app.js: interaction with user, load pdb file from bar api, visualize using 3dmolTesting.js function
+
+3dmolTesting.js: interaction with 3Djmol api.
+
+viewer: the object use to visualization
+
+setstyle() : set the style, colour...of model
+
+10.23
+
+Try to write code to access BnIR SNP information
+
+using endpoint: https://yanglab.hzau.edu.cn/bnir_module/publicfunc/get_sample_info_table
+
+using parameter: params_alt = {
+ 'genome': 'ZS11',
+ 'mode': 'SNP',
+ 'genotype': 'alt', # or 'ref'
+ 'chr': chr,
+ 'pos': pos
+}
+
+http request----find the data---save as json
+
+test for one SNP about 4 seconds in python.
+
+11.3
+
+run AF2 on server
+
+run_alphafold.py \
+
+--fasta_paths= \ #pep file
+
+--output_dir= \ #output
+
+--data_dir=/cvmfs/bio.data.computecanada.ca/content/databases/Core/alphafold2_dbs \ #reference
+
+--bfd_database_path=/cvmfs/bio.data.computecanada.ca/content/databases/Core/alphafold2_dbs/bfd \
+
+--mgnify_database_path=/cvmfs/bio.data.computecanada.ca/content/databases/Core/alphafold2_dbs/mgnify \ 
+
+--pdb70_database_path=/cvmfs/bio.data.computecanada.ca/content/databases/Core/alphafold2_dbs/pdb70 \
+
+--uniclust30_database_path=/cvmfs/bio.data.computecanada.ca/content/databases/Core/alphafold2_dbs/uniclust30 \ --uniprot_database_path=/cvmfs/bio.data.computecanada.ca/content/databases/Core/alphafold2_dbs/uniprot \
+
+--model_preset=monomer \ #monomer or multimer
+
+--db_preset=full_dbs \ #full_dbs or reduced_dbs
+
+--max_template_date=2024-11-04 \
+
+--use_gpu_relax=true \
+
+--run_relax=true
+
+11.4
+
+Learning MySQL DDL and DML
+
+Understant how tomatoes databases be built.
+
+11.5
+
+Learning DQL
+
+Write sample database for canola
+
+11.11
+
+Learning DQL
+
+11.12
+
+we still need snp reference table. Since 1 protein may has more than one snps so if we store chr in that table, that will many duplicated information.
+
+11.13
+
+create two tables:
+
+protein_reference: for gene name and locus
+snp_to_protein: snp informations and protein_reference_id
+Test database by insert pep file and chr A01 vcf files into database
+
+Test query snp informations by gene name
+
+11.18
+
+Try to run AF2 on Graham
+
+using monomer; 64G; 1h
+
+11.19
+
+clone alphafold3 into server: 1TB for storage, 64G RAM
+
+run alphafold2 predict all protein structure
+
+11.20
+
+module load absl_py/2.1.0 chex/0.1.87 dm_haiku/0.0.13 dm_tree/0.1.8 filelock/3.16.1 jax[cuda12]/0.4.34 jax_cuda12_pjrt/0.4.34 jax_cuda12_plugin[with_cuda]/0.4.34 jax_triton/0.2.0 jaxlib/0.4.34 jaxtyping/0.2.34 jmp/0.0.4 ml_dtypes/0.5.0 numpy/2.1.3 nvidia_cublas_cu12/12.6.3.3 nvidia_cuda_cupti_cu12/12.6.80 nvidia_cuda_nvcc_cu12/12.6.77 nvidia_cuda_runtime_cu12/12.6.77 nvidia_cudnn_cu12/9.5.1.17 nvidia_cufft_cu12/11.3.0.4 nvidia_cusolver_cu12/11.7.1.2 nvidia_cusparse_cu12/12.5.4.2 nvidia_nccl_cu12/2.23.4 nvidia_nvjitlink_cu12/12.6.77 opt_einsum/3.4.0 pillow/11.0.0 rdkit/2024.03.5 scipy/1.14.1 tabulate/0.9.0 toolz/1.0.0 tqdm/4.67.0 triton/3.1.0 typeguard/2.13.3 typing_extensions/4.12.2 zstandard/0.23.0
+﻿
+
+pip install --find-links=/cvmfs/soft.computecanada.ca/custom/python/wheelhouse --no-index
+
+installed: absl-py==2.1.0 chex==0.1.87 dm-haiku==0.0.13 dm-tree==0.1.8 filelock==3.16.1 jax[cuda12]==0.4.34 jax-cuda12-pjrt==0.4.34 numpy==2.1.3 jax-triton==0.2.0 jaxlib==0.4.34 jaxtyping==0.2.34 jmp==0.0.4 ml-dtypes==0.5.0 opt-einsum==3.4.0 scipy==1.14.1 tabulate==0.9.0 toolz==1.0.0 tqdm==4.67.0 triton==3.1.0 typeguard==2.13.3 typing-extensions==4.12.2 jax-cuda12-plugin==0.4.34
+uninstalled: nvidia-cublas-cu12==12.6.3.3 nvidia-cuda-cupti-cu12==12.6.80 nvidia-cuda-nvcc-cu12==12.6.77 nvidia-cuda-runtime-cu12==12.6.77 nvidia-cudnn-cu12==9.5.1.17 nvidia-cufft-cu12==11.3.0.4 nvidia-cusolver-cu12==11.7.1.2 nvidia-cusparse-cu12==12.5.4.2 nvidia-nccl-cu12==2.23.4 nvidia-nvjitlink-cu12==12.6.77 pillow==11.0.0 rdkit==2024.3.5 zstandard==0.23.0
+11.24
+
+protein reference: gene name; gene identifier; uniport id
+
+trying to run alphafold3:
+
+need json files as input
+[
+  {
+    "name": "BnaA01T0000100ZS Prediction",
+    "modelSeeds": [],
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MVVTANSDSNYYGTTKPVHPKEEKVTRLRFYLHDILSGRNPSAVRIAHANLTGGADSAVGFGSLFAMDDPLTVGPGKDSKEIGNGRGMYVSASKDIRKFTIVMYADLAFTAGKFNGSSISVFSRNPVAEEAGEREIGIVGGRGKFRMARGFVKIKTHQIDMKTGDAVLRYDATVYHY",
+          "count": 1
+        }
+      }
+    ]
+  }
+]
+run runaf3data.sh first for all data, then run runaf3.sh in same dir
+result in ~/scratch/af/af3/test_result. job id 27483656 27483739
+11.28
+
+download swissport id database
+
+download blast command line tool
+
+11.30
+
+bnadatabase: build by ZS11
+
+swissprot_db: build by swissprot fasta from ncbi
+
+12.3
+
+download three promote from uniport
+
+https://www.uniprot.org/proteomes/UP000028999
+
+https://www.uniprot.org/proteomes/UP001295469
+
+https://www.uniprot.org/proteomes/UP000824890
+
+and build merged.fasta
+
+12.4
+
+gsutil -m cp gs://public-datasets-deepmind-alphafold-v4/proteomes/proteome-tax_id-3708-*_v4.tar .
+
+which 3708 is brassica napus ncbi tax id
+
+unzip files:
+
+PID---filename
+17804---0
+29813---9
+738---10
+6697---4
+4095---11
+32423---1
+1827---2
+8339---3
+6055---12
+11977---13
+21846---5
+22598---6
+23880---7
+12.5
+
+run blastp -query sequences.fasta -db bnadatabase/bnadatabase -out result_bl_AF.txt -outfmt 6
+
+in PID 31032
+
+output result_bl_AF.txt
+
+12.13
+
+Due to graham down.
+
+Downloading:
+
+sequence.fasta: all fasta from AF2 database
+
+output_OX3708: filtered from sequence.fasta that bna
+
+ZS11db: blast db built by ZS11 genome
+
+12.14
+
+run blast AF sequence on ZS db: blastp -query output_OX3708.fasta -db ~/scratch/ncbi/ZS11db -out result_AF_to_ZS.txt -outfmt 6 &
+
+in narval1, PID 3358699
+
+run blast ZS sequence on AF db: blastp -query zs11.all.v0.pep -db ~/scratch/ncbi/AF2db -out result_ZS_to_AF.txt -outfmt 6 &
+
+in narval 1, PID 3360018
+
+﻿
+
+rerun with only 1 max match be recorded
+
+blastp -query output_OX3708.fasta -db ~/scratch/ncbi/ZS11db -out result_AF_to_ZS.txt -outfmt 6 -max_target_seqs 1 &
+
+in PID 63964
+
+blastp -query zs11.all.v0.pep -db ~/scratch/ncbi/AF2db -out result_ZS_to_AF.txt -outfmt 6 -max_target_seqs 1 &
+
+in PID 64054
+
+﻿
+100
+95
+90
+80
+75
+total
+AF to ZS
+46999
+89040
+100892
+111419
+115103
+139616
+ZS to AF	
+49100	
+86198	
+93566	
+99609	
+101502	
+111951
+12.30
+
+mapping 70394 results in Uniprot
+
+This image has an empty alt attribute; its file name is image.png
+1.6
+
+downloading AF structures in PID 633903
+
+create gene_info.csv: ZS, AF, Uniprot
+
+SNP will ignore lower than 95% ident against AF database
+
+SQL database: gene_name-----AF_name, gene_identifier-----ZS_name
+
+﻿
+
+1.12
+
+run darmor v4
+
+blastp -query Brassica_napus.Darmor.v4.1.protein.fa -db ~/scratch/ncbi/AF2db -out result_AF_to_Dar4.txt -outfmt 6 -max_target_seqs 1 &
+
+pid 2042598
+
+run darmor v10
+
+blastp -query Brassica_napus.Darmor.v10.protein.fa -db ~/scratch/ncbi/AF2db -out result_AF_to_Dar10.txt -outfmt 6 -max_target_seqs 1 &
+
+pid 3862575
+
+﻿
+﻿
+Dar4
+85229/103504=82.3 %
+Dar10
+75702/109217=69.3 %
+run darmor v10 against v4
+
+blastp -query Brassica_napus.Darmor.v10.protein.fa -db ~/scratch/Darmor4/Darmorv4db -out result_Dar10_to_Dar4.txt -outfmt 6 -max_target_seqs 1 &
+
+pid 2694311
+
+1.13
+
+there are 85201 proteins
+
+1.14
+
+Run SQL
+
+proteins---85201
+
+snps---Summary: 398,049 of 673,856 statements executed in 9 hr, 51 min, 14 sec, 209 ms (166,465,723 symbols in file)
+
+317010 (80%) snps successfully inserted.
+
+1.15
+
+The vcf used Darmor v4.1
+
+From variation file citation:
+
+This image has an empty alt attribute; its file name is image-2-1024x50.png
+From genome citation:
+
+This image has an empty alt attribute; its file name is image-3-1024x74.png
+﻿
+
+Removing all non-cif files: pid 1236892
+
+Block contains unexpected or invalid content.
+ATTEMPT RECOVERY
+
+1.21
+
+nohup blastp -query Arabidopsis_thaliana.TAIR10.pep.all.fa -db ~/scratch/ncbi/Darmorv4db -ou
+t result_AT10_to_Dar4.txt -outfmt 6 -max_target_seqs 1 &
+pid 2352305
+
+100
+95
+90
+80
+75
+50
+total
+151
+2437
+9231
+26102
+32142
+44967
+52265
+there are 49476 proteins has e score less than 1e-5. 48730 less than 1e-10
+
+1.22
+
+Gaols: filtered by AF_AT, e value, both in Dar and AF
+
+Wrok Flow: Blast of AT against Dar------>filtered by qE-20---->filtered by list Dar in AF----> filtered by list AT in AF
+
+1.26
+
+nohup blastp -query AT_test.fa -db ~/scratch/ncbi/Darmorv4db -out result_ATtest_15.txt -outfmt 6 -max_target_seqs 15 &
+
+nohup blastp -query AT_test.fa -db ~/scratch/ncbi/Darmorv4db -out result_ATtest_25.txt -outfmt 6 -max_target_seqs 25 &
+
+nohup blastp -query AT_test.fa -db ~/scratch/ncbi/Darmorv4db -out result_ATtest_40.txt -outfmt 6 -max_target_seqs 40 &
+
+# of match
+1E-20(%)
+1E-12(%)
+1E-10(%)
+Total matches
+1 match
+0.889
+0.91
+0.932
+52265
+15match test
+0.497
+0.529
+0.529
+187
+25 match test
+0.42
+0.481
+0.509
+283
+40 match test
+0.398
+0.465
+0.496
+357
+in 40 match test, the matches distribution for 10 genes are:
+
+
+AT1G30814.1
+
+AT1G30814.2
+
+AT1G30814.3
+
+AT1G30814.4
+
+AT2G43120.1
+
+AT2G43120.2
+
+AT3G18710.1
+
+AT4G25880.4
+
+AT4G32100.1
+
+AT5G16970.1
+2
+2
+2
+2
+16
+16
+40
+33
+10
+19
+﻿
+
+Checking if all AF name have structure: pid 2752304
+
+All AF name have structures in narval:~/scratch/AF_structure
+
+1.27
+
+nohup blastp -query Arabidopsis_thaliana.TAIR10.pep.all.fa -db ~/scratch/ncbi/Darmorv4db -out result_AT_to_Dar_40.txt -outfmt 6 -max_target_seqs 40 &
+
+[1] 364248
+
+﻿
+
+1.29
+
+40 matches using AT in TAIR10 against Darmor:
+
+total
+filtered by E-20
+filtered by AF of Bna
+filtered by AF of Tair
+filtered by Phy of Tair
+1810656
+993431
+816861
+454842
+479611
+﻿
+
+2.6
+
+Need to DO: find distribution
+
+2.11
+
+makeblastdb -dbtype prot -in Arabidopsis_thaliana.TAIR10.pep.all.fa -parse_seqids -out ncbi/TAIR10db
+
+nohup blastp -query Brassica_napus.Darmor.v4.1.protein.fa -db ~/scratch/ncbi/TAIR10db -out result_Darmor_to_TAIR.txt -outfmt 6 -max_target_seqs 40 &
+
+pid 2006234
+
+Set hsps to 1
+
+nohup blastp -query Brassica_napus.Darmor.v4.1.protein.fa -db ~/scratch/ncbi/TAIR10db -out result_Dar_to_AT_40_hsp1.txt -outfmt 6 -max_target_seqs 40 -max_hsps 1&
+
+2751655 rerun with 40174630
+
+total
+filtered by E-20
+filtered by AF of Bna
+filtered by AF of Tair
+filtered by Phy of Tair
+1481759
+891482
+739106
+414047
+440428
+nohup blastp -query Arabidopsis_thaliana.TAIR10.pep.all.fa -db ~/scratch/ncbi/Darmorv4db -out result_AT_to_Dar_40_hsp1.txt -outfmt 6 -max_target_seqs 40 -max_hsps 1 &
+
+2738620 rerun with 40174599
+
+2.13
+
+[lixiaof8@narval2 scratch]$ sbatch run_AT_to_DAR_hsp1.slurm
+Submitted batch job 40210010
+[lixiaof8@narval2 scratch]$ sbatch run_Bra_to_Bra_hsp1.slurm
+Submitted batch job 40210011
+[lixiaof8@narval2 scratch]$ sbatch run_Bra_to_AT_hsp1.slurm
+Submitted batch job 40210012
+
+﻿
+
+2.18
+
+Create homologs table which contains search species, result species, search gene, result gene, percent identity, e score
+
+﻿
+
+2.20
+
+Modified the homologs_db by adding is_search_structure and is_result _structures represent if there is a structure corresponding the gene.
+
+﻿
+
+2.26
+
+Modified the endpoint of BAR API for supporting canola in snp information request
+
+result is like:
+
+HTML
+
+{
+  "wasSuccessful": true,
+  "data": [
+    [
+      "chrA01",
+      292,
+      null,
+      "missense_variant",
+      "MODERATE",
+      "MISSENSE",
+      "0G>T",
+      "HisGln",
+      null,
+      "BnaA01g00050D",
+      "protein_coding",
+      "CODING",
+      "GSBRNA2T00121635001",
+      0.0025
+    ],
+    [
+      "chrA01",
+      250,
+      null,
+      "missense_variant",
+      "MODERATE",
+      "MISSENSE",
+      "0C>A",
+      "GlyCys",
+      null,
+      "BnaA01g00050D",
+      "protein_coding",
+      "CODING",
+      "GSBRNA2T00121635001",
+      0.0025
+    ]
+  ]
+}
+﻿
+
+3.4
+
+Adding Homologs endpoint into BAR API which use search gene, search species, result species as input and return:
+
+HTML
+
+{
+  "wasSuccessful": true,
+  "data": {
+    "homologs": [
+      {
+        "search_species_name": "arabidoposis",
+        "search_protein_name": "AT3G18710.1",
+        "is_search_structure": 1,
+        "result_species_name": "canola",
+        "result_protein_name": "BnaC05g34400D",
+        "is_result_structure": 1,
+        "Percent_id": 76.334,
+        "e_score": 0
+      },
+      {
+        "search_species_name": "arabidoposis",
+        "search_protein_name": "AT3G18710.1",
+        "is_search_structure": 1,
+        "result_species_name": "canola",
+        "result_protein_name": "BnaA05g21450D",
+        "is_result_structure": 0,
+        "Percent_id": 75.581,
+        "e_score": 0
+      },
+      {
+        "search_species_name": "arabidoposis",
+        "search_protein_name": "AT3G18710.1",
+        "is_search_structure": 1,
+        "result_species_name": "canola",
+        "result_protein_name": "BnaA03g34890D",
+        "is_result_structure": 1,
+        "Percent_id": 72.874,
+        "e_score": 0
+      },
+      {
+        "search_species_name": "arabidoposis",
+        "search_protein_name": "AT3G18710.1",
+        "is_search_structure": 1,
+        "result_species_name": "canola",
+        "result_protein_name": "BnaC03g40630D",
+        "is_result_structure": 1,
+        "Percent_id": 72.874,
+        "e_score": 0
+      },
+      {
+        "search_species_name": "arabidoposis",
+        "search_protein_name": "AT3G18710.1",
+        "is_search_structure": 1,
+        "result_species_name": "canola",
+        "result_protein_name": "BnaAnng35870D",
+        "is_result_structure": 1,
+        "Percent_id": 74.941,
+        "e_score": 0
+      }
+    ]
+  }
+}
+﻿
+
+3.7
+
+Changed configuration of protein_reference table by: use Bna name as gene_identifier, use G name as gene_name, delete alphafold_name
+
+adding test for snp endpoint for canola and homologs endpoint
+
+3.20
+
+There are 4301 in BLAST but not in Uniprot
+There are 1421 in Uniprot but not in BLAST
+There are 80900 in both
+There are 2411 in both but different AF name
+
+3.24
+
+There are totally 79015 Darmor proteins has structure
+
+Open publish panel
+Page
+Admin Notices
